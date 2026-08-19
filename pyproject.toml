@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "netprobe-cli"
+version = "0.1.0"
+description = "A dependency-light CLI toolkit for everyday network diagnostics."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "saeed205" }]
+keywords = ["network", "cli", "diagnostics", "subnet", "portscan"]
+classifiers = [
+    "Environment :: Console",
+    "Intended Audience :: System Administrators",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3.9",
+    "Topic :: System :: Networking :: Monitoring",
+]
+dependencies = []
+
+[project.scripts]
+netprobe = "netprobe.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/saeed205/netprobe-cli"
+Issues = "https://github.com/saeed205/netprobe-cli/issues"
+
+[tool.setuptools.packages.find]
+include = ["netprobe*"]
