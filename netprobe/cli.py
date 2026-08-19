@@ -42,7 +42,21 @@ def build_parser() -> argparse.ArgumentParser:
     _load_commands()
     for registrar in _REGISTRARS:
         registrar(subparsers)
+    _apply_config(parser, subparsers)
     return parser
+
+
+def _apply_config(parser, subparsers) -> None:
+    """Let a config file supply defaults, if one is present."""
+    from . import config
+
+    settings = config.load()
+    if not settings:
+        return
+    shared = settings.get("defaults", {})
+    if "json" in shared:
+        parser.set_defaults(json=bool(shared["json"]))
+    config.apply_to_parser(subparsers, settings)
 
 
 def main(argv: Optional[List[str]] = None) -> int:
