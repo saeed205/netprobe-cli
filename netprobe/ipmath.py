@@ -4,7 +4,7 @@ from __future__ import annotations
 
 import argparse
 import ipaddress
-from typing import Dict, Iterator, List, Union
+from typing import Dict, List, Union
 
 from .cli import register
 

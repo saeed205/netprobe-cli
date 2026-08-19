@@ -1,0 +1,14 @@
+line-length = 88
+target-version = "py39"
+
+[lint]
+# "UP" (pyupgrade) is deliberately left out. It rewrites `Dict[str, int]` to
+# `dict[str, int]` and `Optional[X]` to `X | None`, which the codebase avoids
+# on purpose: 3.9 is the supported floor and the typing-module spelling works
+# there at runtime, not only inside `from __future__ import annotations`.
+select = ["E", "F", "W", "I", "B", "C4"]
+
+[lint.per-file-ignores]
+# The CLI registry is populated by import side effects, so these imports are
+# deliberately "unused".
+"netprobe/commands.py" = ["F401"]
