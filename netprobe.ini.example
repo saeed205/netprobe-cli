@@ -1,0 +1,18 @@
+# Copy to ./netprobe.ini, ~/.config/netprobe/netprobe.ini, or point
+# NETPROBE_CONFIG at it. Anything passed on the command line still wins.
+
+[defaults]
+# emit JSON everywhere instead of tables
+json = false
+
+[scan]
+timeout = 0.4
+workers = 128
+ports = 22,80,443,3389,8080
+
+[latency]
+count = 10
+interval = 0.1
+
+[http]
+timeout = 5
