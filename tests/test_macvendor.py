@@ -66,7 +66,9 @@ class TestFlagBits(unittest.TestCase):
 
 class TestLookup(unittest.TestCase):
     def test_known_vendors(self):
-        self.assertEqual(macvendor.lookup("00:0c:29:11:22:33")["vendor"], "VMware, Inc.")
+        self.assertEqual(
+            macvendor.lookup("00:0c:29:11:22:33")["vendor"], "VMware, Inc."
+        )
         self.assertEqual(
             macvendor.lookup("b8:27:eb:11:22:33")["vendor"],
             "Raspberry Pi Foundation",

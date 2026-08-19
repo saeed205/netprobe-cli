@@ -4,7 +4,7 @@ from __future__ import annotations
 
 import argparse
 import sys
-from typing import Callable, Dict, List, Optional
+from typing import Callable, List, Optional
 
 from . import __version__
 
