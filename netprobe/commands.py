@@ -4,9 +4,9 @@ from __future__ import annotations
 
 # Importing a module here is enough - each one calls cli.register() at import
 # time. Keep the list alphabetical so merge conflicts stay trivial.
-from . import ipmath, latency, output  # noqa: F401
+from . import ipmath, latency, output, portscan  # noqa: F401
 
-_MODULES = ["ipmath", "latency", "output"]
+_MODULES = ["ipmath", "latency", "output", "portscan"]
 
 
 def loaded() -> list:
